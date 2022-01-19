@@ -1,0 +1,56 @@
+server:
+  port: 10012
+spring:
+  application:
+    name: iron-km-client
+  jackson:
+    serialization:
+      indent-output: true
+
+kingmeter:
+  default:
+    companyCode: 4701
+    timezone: 1
+
+log:
+  message: true # wifimaster(2001) <==message==> socket server(2002)
+  model: true # wifimaster <== model ==> socket server
+  business: true # wifimaster <== business logic ==> socket server
+  exception: true # all kinds of exception
+
+socket:
+#  host: 47.92.38.164
+#  host: 39.100.88.118
+  host: 127.0.0.1
+  port: 10017
+#  host : iron.kmiot.group
+#  socketPort: 7777
+  charset: utf-8
+  idle_timeout: 600
+  start_code_1: 0x40
+  start_code_2: 0x3A
+  end_code_1: 0x0D
+  end_code_2: 0x0A
+  token_length: 32
+  readIdleTimeLimit: 300
+  writeIdleTimeLimit: 0
+  allIdleTimeLimit: 0
+  #other config
+  waitSeconds: 20
+
+  bossThreads: 1
+  workerThreads: 8
+  useLinuxNativeEpoll: false
+  tcpNoDelay: true
+  tcpSendBufferSize: -1
+  tcpReceiveBufferSize: -1
+  tcpKeepAlive: true
+  soLinger: -1
+  reuseAddress: false
+  acceptBackLog: 1024
+device:
+  loginFunctionCode: 49154
+  siteIdStart : 9000000000001
+  deviceCount : 1
+  heartbeat:
+    internal: 2
